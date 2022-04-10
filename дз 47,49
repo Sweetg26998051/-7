@@ -1,0 +1,62 @@
+Задача 47: Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+
+int m =3;
+int n =4;
+double [,] array = new double[m,n];
+void FillArray(double [,] matr)
+{
+    for (int i = 0; i < matr.GetLength(0); i ++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j ++)
+        {
+            matr [i,j] = new Random().NextDouble ();
+        }
+    }
+}
+void Print (double[,] matr)
+{
+    for (int i = 0; i < matr.GetLength(0); i ++)
+    {
+        for (int j = 0; j < matr.GetLength(1); j ++)
+        {
+            Console.Write ($"{matr [i,j]}" );
+        }
+        Console.WriteLine ();
+    }
+}
+FillArray (array);
+Print (array);
+
+Задача 49: Задайте двумерный массив. Найдите элементы, у которых оба индекса нечётные, и замените эти элементы на их квадраты.
+
+Console.Write ("введите a");
+int a = Convert.ToInt32 (Console.ReadLine());
+Console.Write ("введите b");
+int b = Convert.ToInt32 (Console.ReadLine());
+
+int [,] mass = new int [a,b];
+
+for (int i = 0; i < mass.GetLength (0); i ++);
+{
+    Console.WriteLine ();
+    for (int f = 0; f < mass.GetLength(1); f++)
+    {
+        mass [i,f] = new Random().Next (0,11);
+    }
+Console.WriteLine ();
+for (int i = 0; i < mass.GetLength (0); i ++);
+{
+    Console.WriteLine ();
+    for (int f = 0; f < mass.GetLength(1); f++)
+    {
+      if (i % 2 == 1 && f % 2 == 1)
+      {
+          Console.Write (mass [i,f] * mass [i,f] + "\t");
+      }
+      else
+      {
+          Console.Write ($"{mass [i,f]}" + "\t");
+      }
+    }
+}
+
